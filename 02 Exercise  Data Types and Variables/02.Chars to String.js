@@ -1,0 +1,6 @@
+function charToString(ch1,ch2,ch3){
+    console.log(`${ch1}${ch2}${ch3}`)
+}
+charToString('a',
+'b',
+'c')

@@ -1,0 +1,27 @@
+{
+    "launch": {
+        "verios": "0.2.0",
+        
+ 
+        "configurations": [
+            {
+                "type": "node",
+                "request": "launch",
+                "name": "Launch Program",
+                "program": "${file}",
+                "cwd":"${workspaceFolder}",
+                "outputCapture": "std"
+            }
+        ],
+        "compounds": []
+    },
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 600,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "bracketPairColorizer.depreciation-notice": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Dracula",
+    "window.zoomLevel": 1
+}
