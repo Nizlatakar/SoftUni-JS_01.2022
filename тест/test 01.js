@@ -1,22 +1,12 @@
-function solve(input) {
-
-
-
+function solve(input,searched) {
+    let conter =0
+while(input.includes(searched)){
+input=input.replace(searched,"@".repeat(searched.length))
+ 
+}
+console.log(input); 
 }
 
-solve(["Hawai::Cyprys-Greece",
-"Add Stop:7:Rome",
-"Remove Stop:11:16",
 
 
-
-
-
-
-
-
-
-
-
-"Switch:Hawai:Bulgaria",
-"Travel"])
+solve("this is simpl text to show is this  for is this","is")
