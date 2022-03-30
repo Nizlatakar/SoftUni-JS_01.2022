@@ -1,5 +1,5 @@
 function softuni(input) {
-    
+
     let pattern = /%([A-Z][a-z]*)%.*?<(\w+)>.*?\|(\d+)\|.*?(-?\d+(?:\.\d+)?)\$/;
     let total = 0;
 
@@ -12,7 +12,7 @@ function softuni(input) {
             price = Number(price);
 
             total += qty * price;
-
+            // console.log(_);
             console.log(`${name}: ${product} - ${(qty * price).toFixed(2)}`);
         }
     }

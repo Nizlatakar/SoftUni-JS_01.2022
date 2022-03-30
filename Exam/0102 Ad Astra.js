@@ -3,7 +3,7 @@ function solution(input) {
   let items = [];
   let pattern = /([|#])(?<name>[A-Za-z\s]+)\1(?<date>\d{2}\/\d{2}\/\d{2})\1(?<calories>\d{1,5})\1/g
   let totalCal = 0
-  let regex = pattern.match(string);
+  let regex = pattern.exec(string);
   while (regex) {
       items.push({ item: regex[2], day: regex[3], cal: regex[4] });
       totalCal += Number(regex[4])
