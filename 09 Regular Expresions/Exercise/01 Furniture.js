@@ -1,6 +1,6 @@
 function solve(input) {
 
-    let pattern = />>(?<furniture>[A-Z][a-zA-Z]+)<<(?<price>\d+\.?\d+)!(?<quantity>\d+)/g;
+    let pattern = />>(?<furniture>[A-Z][a-zA-Z]+)<<(?<price>\d+\.?\d+)!(?<quantity>\d+)/
     let match = pattern.exec(input);
     let furniture = [];
     let totalPrice = 0;

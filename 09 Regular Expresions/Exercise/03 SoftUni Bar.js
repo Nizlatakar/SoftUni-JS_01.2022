@@ -1,5 +1,5 @@
 function softuni(input) {
-
+    
     let pattern = /%([A-Z][a-z]*)%.*?<(\w+)>.*?\|(\d+)\|.*?(-?\d+(?:\.\d+)?)\$/;
     let total = 0;
 

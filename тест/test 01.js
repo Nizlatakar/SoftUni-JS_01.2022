@@ -1,22 +1,16 @@
-function solve(input) {
-
-
-
+function solve(searched,text) {
+ let [fword,sword]=  searched.split(', ')
+ text.split(" ")
+for (const word of text) {
+    while(word.includes(searched)){
+    input=input.replace(searched,"@".repeat(searched.length))
+     
+    }
+}
+console.log(input); 
 }
 
-solve(["Hawai::Cyprys-Greece",
-"Add Stop:7:Rome",
-"Remove Stop:11:16",
 
 
-
-
-
-
-
-
-
-
-
-"Switch:Hawai:Bulgaria",
-"Travel"])
+solve('great, learning',
+'softuni is ***** place for ******** new programming languages')
