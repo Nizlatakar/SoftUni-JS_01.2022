@@ -1,4 +1,4 @@
-function solve(input){
+function mirrorWords(input){
     let text = input[0];
     let reg= /(\@|\#)([A-Za-z]{3,})\1\1([A-Za-z]{3,})\1/gm
     let matches = [...text.matchAll(reg)]
@@ -26,3 +26,6 @@ function solve(input){
         }
     }
 }
+mirrorWords([
+    '@mix#tix3dj#poOl##loOp#wl@@bong&song%4very$long@thong#Part##traP##@@leveL@@Level@##car#rac##tu@pack@@ckap@#rr#sAw##wAs#r#@w1r'
+])
