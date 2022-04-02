@@ -5,6 +5,7 @@ function destinationMapper(text) {
   let match = pattern.exec(text);
   while (match !== null) {
       destinations.push(match[2]);
+      console.log();
       travelPoints += match[2].length;
       match = pattern.exec(text);
   }
