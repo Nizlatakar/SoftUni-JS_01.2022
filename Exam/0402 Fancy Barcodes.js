@@ -1,4 +1,4 @@
-function barcode(input) {
+function fancyBarcodes(input) {
     const patternBarcode = /@#+([A-Z][A-Za-z0-9]{4,}[A-Z])@#+/;
     const patternDigits = /[0-9]/g;
   
@@ -12,3 +12,7 @@ function barcode(input) {
     });
   }
   
+fancyBarcodes(["3",
+"@#FreshFisH@#",
+"@###Brea0D@###",
+"@##Che4s6E@##"])
