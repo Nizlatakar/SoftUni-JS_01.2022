@@ -1,16 +1,23 @@
-function solve(searched,text) {
- let [fword,sword]=  searched.split(', ')
- text.split(" ")
-for (const word of text) {
-    while(word.includes(searched)){
-    input=input.replace(searched,"@".repeat(searched.length))
-     
-    }
+function solve(input) {
+ let pattern =/([=|\/])(?<destination>[A-Z][a-z]{2,})(\1)/g;
+ let destinations= [];
+ let travelpoints= 0;
+let match = pattern.exec(input)
+while(match !== null) {
+    destinations.push(match[2])
+    travelpoints+=match[2].length
+  
 }
-console.log(input); 
+let result = 'Destination: ';
+for (let index = 0; index < destinations.length; index++) {
+   if (index == 0) {
+    result +=destinations[index]
+   }else {
+   result +=`, ${destinations[index]}`
+   }
+}
+console.log(result);
+console.log(travelpoints);
 }
 
-
-
-solve('great, learning',
-'softuni is ***** place for ******** new programming languages')
+solve("=Hawai=/Cyprus/=Invalid/invalid==i5valid=/I5valid/=i=")

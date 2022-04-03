@@ -2,7 +2,7 @@ function solve([input]) {
     let threshold = 1;
     let coolEmojis = [];
 
-    let digits = input.match(/\d/g).map(Number);
+    let digits = input.match(/\d/g).map(Number);  
     for (let digit of digits) {
         threshold *= digit;
     }
