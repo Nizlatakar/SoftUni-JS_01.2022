@@ -1,84 +1,44 @@
-
-function solve(input) {
-            let command = ''
-            // List<Guest> guests = new List<Guest>();
-            let unlikes = 0;
-
-            while ((command = Console.ReadLine()) != "Stop")
-            {
-                command = command.Split("-", StringSplitOptions.RemoveEmptyEntries);
-                let commandType = commandArg[0];
-                let guestName = commandArg[1];
-                let meal = commandArg[2];
-
-                if (commandType == "Like")
-                {
-                    if (!guests.Any(n => n.Name == guestName))
-                    {
-                        guests.Add(new Guest(guestName));
-                    }
-
-                    Guest [likeGuest] = SearchedGuest(guests, guestName);
-
-                    if (!likeGuest.Meals.Contains(meal))
-                    {
-                        likeGuest.Meals.Add(meal);
-                    }
-                }
-                else if (commandType == "Dislike")
-                {
-                    if (guests.Any(n => n.Name == guestName))
-                    {
-                        Guest [disLikeGuest ]= SearchedGuest(guests, guestName);
-
-                        if (disLikeGuest.Meals.Contains(meal))
-                        {
-                            unlikes ++;
-                            disLikeGuest.Meals.Remove(meal);
-                            console.log(`${guestName} doesn't like the ${meal}.`);
-                        }
-                        else
-                        {
-                           
-                            console.log(`${guestName} doesn't have the ${meal} in his/her collection.`);
-                        }
-                    }
-                    else
-                    {
-
-                        console.log(`${guestName} is not at the party.`);
-                    }
-                }
-            }
-
-            foreach (Guest [guest] in guests)
-            {
-
-                console.log(`{guest.Name}: {string.Join(", ", guest.Meals)}`);
-            }
-         
-            console.log(`Unliked meals: ${unlikes}`);
-
+function party(arr) {
+    let guestList = {};
+    let count = 0;
+    while (arr[0] !== "Stop") {
+      let lines = arr.shift().split("-");
+      let [taste, guest, meal] = lines;
+      
+      if (taste === "Like") {
+        if (!guestList.hasOwnProperty(guest)) {
+        guestList[guest] = [];
+      }
+        if (!guestList[guest].includes(meal)) guestList[guest].push(meal);
+      }
+  
+      if (taste === "Dislike") {
+        if (!guestList.hasOwnProperty(guest)) {
+          console.log(`${guest} is not at the party.`);
+        } else {
+          if (!guestList[guest].includes(meal)) {
+            console.log(
+              `${guest} doesn't have the ${meal} in his/her collection.`
+            );
+          }
+  
+          let index = guestList[guest].indexOf(meal);
+          if (index > -1) {
+            guestList[guest].splice(index, 1);
+            count++
+            console.log(`${guest} doesn't like the ${meal}.`);
+          }
         }
-
-         Guest SearchedGuest (List<Guest> guests, string guestName)
-        {
-           searchGuest = guests.hasOwnProperty(n => n.Name == guestName);
-            return searchGuest;
-        }
+      }
     }
-
-    
-         Guest[name] 
-        {
-            this.Name = name;
-            this.Meals = meals;
-        }
-
+    let people = Object.entries(guestList);
+    for (let [name ,meal] of people) {
+      console.log(`${name}: ${meal.join(', ')}`);
+      
     }
-
-
-solve(["Like-Krisi-shrimps",
+    console.log(`Unliked meals: ${count}`);
+  }
+  party(["Like-Krisi-shrimps",
 "Like-Krisi-soup",
 "Like-Penelope-dessert",
 "Like-Misho-salad",
