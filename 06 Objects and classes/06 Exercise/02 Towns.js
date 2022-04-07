@@ -14,6 +14,14 @@ function towns(input) {
         console.log(currentTown);
     }
 }
+// function solve(input) {
+//     for (const line of input) {
+        
+//         let[city,lat,long]=line.split(' | ')
+        
+//         console.log(` town: '${city}', latitude: '${Number(lat).toFixed(2)}', longitude: '${Number(long).toFixed(2)}' `);
+//     }
+//     }
 
 towns(["Sofia | 42.696552 | 23.32601", "Beijing | 39.913818 | 116.363625"]);
 towns(["Plovdiv | 136.45 | 812.575"]);
