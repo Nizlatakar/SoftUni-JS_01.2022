@@ -1,14 +1,14 @@
 function solve(input) {
     let pass = input.shift();
 
-    for(const line of input) {
+    for (const line of input) {
         const tokens = line.split(' ');
         const cmd = String(tokens[0]);
 
-        if(cmd === 'TakeOdd') {
+        if (cmd === 'TakeOdd') {
             let raw = ''
-            for(let i = 0; i < pass.length; i++) {
-                if(i % 2 !== 0) {
+            for (let i = 0; i < pass.length; i++) {
+                if (i % 2 !== 0) {
                     raw += pass[i];
                 }
             }
@@ -19,6 +19,7 @@ function solve(input) {
             const index = tokens[1];
             const length = tokens[2];
             const substr = pass.substr(index, length);
+            // sum
             pass = pass.replace(substr, '');
             console.log(pass);
 
@@ -26,7 +27,7 @@ function solve(input) {
             const substr = tokens[1];
             const substitute = tokens[2];
 
-            if(!pass.includes(substr)) {
+            if (!pass.includes(substr)) {
                 console.log("Nothing to replace!");
             } else {
                 pass = pass.split(substr).join(substitute);
@@ -36,5 +37,5 @@ function solve(input) {
         }
 
     }
-    console.log(`Your password is: ${pass}`);   
+    console.log(`Your password is: ${pass}`);
 }
