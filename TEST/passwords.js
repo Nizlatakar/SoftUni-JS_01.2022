@@ -14,9 +14,9 @@ function solve(input) {
          let first=   workedText.slice(0,command[1]);
          let second=   workedText.slice(command[1], command[2]+command[1]);
          workedText=first+second
-            console.log(workedText);
+            console.log(workedText.join(""));
         } else if (command[0] === "Substitute") {
-            let proText = workedText;
+            let proText = workedText.join("");
             if (!proText.includes(command[1])) {
                 console.log("Nothing to replace!");
             } else {
